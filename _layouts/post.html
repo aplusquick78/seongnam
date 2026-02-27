@@ -8,7 +8,7 @@
     <meta name="keywords" content="{{ page.town }} 퀵서비스, {{ page.town }} 퀵, 성남 퀵, 분당 퀵, {{ page.title | replace: ' ', ', ' }}">
     <meta name="robots" content="index, follow">
     <meta name="author" content="{{ page.town }}퀵서비스">
-    <meta name="theme-color" content="#004a99">
+    <meta name="theme-color" content="#B9CEEB">
     
     <link rel="canonical" href="https://seongnam.8222quick.com{{ page.url }}">
     <link rel="icon" href="https://seongnam.8222quick.com/favicon.ico">
@@ -27,49 +27,65 @@
     <script src="/file/jquery.min.js"></script>
     <link rel="stylesheet" type="text/css" href="/file/base.css" />
     <style>
+        /* body 전체에 이미지와 동일한 배경색 적용 */
+        body { 
+            margin: 0; 
+            padding: 0; 
+            background-color: #B9CEEB !important; 
+        }
+
         .post-container {
             padding: 100px 20px 60px 20px !important;
             max-width: 800px;
             margin: 0 auto;
+            /* 컨테이너 배경색도 일치시켜 경계선 제거 */
             background: #B9CEEB;
             min-height: 100vh;
         }
+
         .post-header {
             border-bottom: 2px solid #004a99;
             padding-bottom: 15px;
             margin-bottom: 30px;
         }
+
         .post-title {
             font-size: 1.6rem;
             font-weight: 800;
-            color: #333;
+            color: #1a1a1a;
             line-height: 1.4;
         }
+
         .post-meta {
             font-size: 0.9rem;
-            color: #888;
+            color: #555;
             margin-top: 10px;
         }
+
         .post-content {
             font-size: 1.05rem;
             line-height: 1.8;
-            color: #444;
+            color: #222;
             word-break: break-all;
         }
+
         .post-content img {
             max-width: 100%;
             height: auto;
             border-radius: 8px;
             margin: 20px 0;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1); /* 이미지 가독성을 위한 그림자 */
         }
+
         .call-action {
             margin-top: 50px;
             padding: 25px;
-            background: #f8f9fa;
+            background: rgba(255, 255, 255, 0.5); /* 반투명 흰색으로 포인트 */
             border-radius: 12px;
             text-align: center;
             border: 1px dashed #004a99;
         }
+
         .btn-tel {
             display: inline-block;
             margin-top: 15px;
@@ -80,6 +96,7 @@
             border-radius: 50px;
             font-weight: bold;
             font-size: 1.2rem;
+            box-shadow: 0 4px 10px rgba(211, 47, 47, 0.3);
         }
     </style>
 </head>
@@ -95,7 +112,7 @@
 
     <article class="post-container">
         <header class="post-header">
-            <span style="display:inline-block; padding:3px 10px; background:#eef4fb; color:#004a99; border-radius:4px; font-weight:bold; font-size:0.8rem; margin-bottom:10px;">배송완료 리포트</span>
+            <span style="display:inline-block; padding:3px 10px; background:#004a99; color:#fff; border-radius:4px; font-weight:bold; font-size:0.8rem; margin-bottom:10px;">신속한 배송 리포트</span>
             <h1 class="post-title">{{ page.title }}</h1>
             <div class="post-meta">
                 <span>📍 지역: {{ page.town }}</span> | 
@@ -108,13 +125,13 @@
         </div>
 
         <section class="call-action">
-            <h2 style="font-size:1.2rem; color:#333;">📢 {{ page.town }} 퀵서비스 이용안내</h2>
-            <p style="margin-top:10px; color:#666;"><strong>{{ page.town }} 전지역</strong> 신속한 픽업과 빠른배송!<br>전화 한 통으로 즉시 배차됩니다.</p>
+            <h2 style="font-size:1.2rem; color:#004a99;">📢 {{ page.town }} 퀵서비스 이용안내</h2>
+            <p style="margin-top:10px; color:#333;"><strong>{{ page.town }} 전지역</strong> 언제 어디서나!<br>전화 한 통으로 즉시 달려갑니다.</p>
             <a href="tel:1661-4262" class="btn-tel">☎ 24시 접수: 1661-4262</a>
         </section>
 
         <div style="margin-top: 40px; text-align: center;">
-            <a href="/" style="color:#888; text-decoration:none; font-size:0.9rem;">[ 메인으로 돌아가기 ]</a>
+            <a href="/" style="color:#004a99; text-decoration:none; font-size:0.9rem; font-weight:bold;">[ 메인으로 돌아가기 ]</a>
         </div>
     </article>
 
