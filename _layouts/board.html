@@ -196,11 +196,27 @@ $('#fullpage').fullpage({
             <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 6px; position: relative; z-index: 10000;">
                 {% assign towns = "수정구,중원구,분당구,성남터미널,야탑터미널,분당,야탑,신흥동,태평동,수진동,단대동,산성동,양지동,복정동,창곡동,성남동,중동,금광동,은행동,상대원동,하대원동,도촌동,여수동,분당동,수내동,정자동,율동,서현동,이매동,야탑동,판교동,삼평동,백현동,금곡동,궁내동,동원동,구미동,운중동,대장동,석운동" | split: "," %}
                 
-                {% for t in towns %}
-                <a href="/{{ t }}퀵서비스/" style="display:inline-block; width:calc(12.5% - 8px); min-width:100px; padding:10px 0; background:#fff; border:1px solid #ddd; border-radius:5px; color:#333; text-decoration:none; font-weight:bold; font-size:0.8rem; cursor:pointer;">
-                    {{ t }}퀵서비스
-                </a>
-                {% endfor %}
+{% for t in towns %}
+<a href="/{{ t }}퀵서비스/" style="
+    display: inline-block; 
+    /* 모바일에서 3개가 한 줄에 나오도록 width를 30% 정도로 조정 */
+    width: calc(33.33% - 8px); 
+    min-width: 80px; 
+    margin-bottom: 5px;
+    padding: 12px 0; 
+    background: #fff; 
+    border: 1px solid #ddd; 
+    border-radius: 5px; 
+    color: #333; 
+    text-decoration: none; 
+    font-weight: bold; 
+    font-size: 0.8rem; 
+    cursor: pointer;
+    box-sizing: border-box;
+    text-align: center;
+">
+    {{ t }}퀵서비스
+</a>
             </div>
             <p style="margin-top:25px; font-weight:800; color:#222; font-size: 1.1rem;">☎ 24시 빠른배송 접수: 1661-4262</p>
         </section>
@@ -226,6 +242,7 @@ $('#fullpage').fullpage({
 <div style="display:none;">{{ content }}</div>
 </body>
 </html>
+
 
 
 
