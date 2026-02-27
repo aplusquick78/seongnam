@@ -97,30 +97,41 @@ $('#fullpage').fullpage({
     });
 });
 </script>
-    <style>/* 세션 밀림 방지 긴급 처방 */
-#fullpage, .section, .fp-tableCell {
-    height: 100% !important;
+    <style>/* 6, 7, 8번 세션 꼬임 방지 전용 스타일 */
+
+/* 모든 세션의 기본 테이블 구조 해제 (모바일 위주) */
+.fp-section.fp-table, .fp-tableCell {
+    display: block !important;
+    height: auto !important;
 }
 
-@media screen and (max-width: 768px) {
-    /* 모바일에서 헤더 때문에 첫 세션이 가려지는 것 방지 */
-    #section0 .text_area {
-        padding-top: 80px !important; 
-    }
-    
-    /* 세션 내부 콘텐츠가 화면 밖으로 삐져나가지 않게 제한 */
-    .section .text_area {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        height: 100vh !important;
-        box-sizing: border-box;
-    }
+/* 0~5번은 화면에 꽉 차게 유지 */
+#section0, #section1, #section2, #section3, #section4, #section5 {
+    height: 100vh !important;
+    display: table !important; /* 0~5번은 기존 중앙 정렬 유지 */
+}
+#section0 .fp-tableCell, #section1 .fp-tableCell, #section2 .fp-tableCell, 
+#section3 .fp-tableCell, #section4 .fp-tableCell, #section5 .fp-tableCell {
+    display: table-cell !important;
+    vertical-align: middle;
+}
 
-    /* 리포트 목록(Section 6)과 지점안내(Section 7)만 예외적으로 스크롤 허용 */
-    #section6, #section7 {
-        height: auto !important;
-        min-height: 100vh;
+/* ⚠️ 문제의 6, 7, 8번: 내용만큼 늘어나게 강제 설정 */
+#section6, #section7, #section8 {
+    height: auto !important; 
+    min-height: 100vh; 
+    padding: 80px 0 40px 0 !important; /* 상하 여백 확보 */
+    display: block !important;
+}
+
+/* 모바일 전용 미세 조정 */
+@media screen and (max-width: 768px) {
+    #section6 .text_area, #section7 .text_area {
+        padding-top: 20px !important;
+    }
+    /* 지점 안내 버튼들 모바일에서 안 겹치게 */
+    .promotion_list a {
+        margin-bottom: 5px !important;
     }
 }</style>
 </head>
@@ -270,6 +281,7 @@ $('#fullpage').fullpage({
 <div style="display:none;">{{ content }}</div>
 </body>
 </html>
+
 
 
 
