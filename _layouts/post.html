@@ -4,14 +4,31 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
     <title>{{ page.title }} | {{ page.town }} 퀵서비스 빠른배송</title>
-    <meta name="description" content="{{ page.town }} 퀵서비스 배송 완료 리포트: {{ page.title }}. 성남 전지역 24시 신속한 픽업 및 빠른배송 전문.">
+    <meta name="description" content="{{ page.town }} 퀵서비스 배송 리포트. {{ page.title }}. 성남 전지역 24시 신속한 픽업 및 빠른배송 전문 기사님 상시 대기.">
+    <meta name="keywords" content="{{ page.town }} 퀵서비스, {{ page.town }} 퀵, 성남 퀵, 분당 퀵, {{ page.title | replace: ' ', ', ' }}">
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="{{ page.town }}퀵서비스">
+    <meta name="theme-color" content="#004a99">
     
+    <link rel="canonical" href="https://seongnam.8222quick.com{{ page.url }}">
+    <link rel="icon" href="https://seongnam.8222quick.com/favicon.ico">
+    
+    <meta property="og:title" content="{{ page.title }} | {{ page.town }} 빠른배송 퀵서비스">
+    <meta property="og:description" content="{{ page.town }} 전지역 24시 실시간 배차 리포트: {{ page.title }}">
+    <meta property="og:image" content="https://seongnam.8222quick.com/img/quick.jpg">
+    <meta property="og:url" content="https://seongnam.8222quick.com{{ page.url }}">
+    <meta property="og:type" content="article">
+    
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="{{ page.title }} | {{ page.town }} 퀵서비스">
+    <meta name="twitter:description" content="{{ page.town }} 신속 배차 빠른배송 리포트">
+    <meta name="twitter:image" content="https://seongnam.8222quick.com/img/quick.jpg">
+
     <script src="/file/jquery.min.js"></script>
     <link rel="stylesheet" type="text/css" href="/file/base.css" />
     <style>
-        /* 포스트 전용 스타일: 헤더 침범 방지 및 가독성 최적화 */
         .post-container {
-            padding: 100px 20px 60px 20px !important; /* 헤더 회피 패딩 */
+            padding: 100px 20px 60px 20px !important;
             max-width: 800px;
             margin: 0 auto;
             background: #fff;
@@ -69,7 +86,8 @@
 <body>
     <header class="main_header">
         <ul class="logo"><li><a href="/"></a></li></ul>
-        <ul class="app_down active"> <li class="nv"><a href="sms:010-2730-5525" target="_blank"></a></li>
+        <ul class="app_down active">
+            <li class="nv"><a href="sms:010-2730-5525" target="_blank"></a></li>
             <li class="kakao"><a href="https://pf.kakao.com/_xnRKLxb" target="_blank"></a></li>
             <li class="tel"><a href="tel:1661-4262"></a></li>
         </ul>
@@ -91,7 +109,7 @@
 
         <section class="call-action">
             <h2 style="font-size:1.2rem; color:#333;">📢 {{ page.town }} 퀵서비스 이용안내</h2>
-            <p style="margin-top:10px; color:#666;">지금 보고 계신 배송 건과 같이<br><strong>{{ page.town }} 전지역</strong> 어디든 신속하게 달려갑니다!</p>
+            <p style="margin-top:10px; color:#666;"><strong>{{ page.town }} 전지역</strong> 신속한 픽업과 빠른배송!<br>전화 한 통으로 즉시 배차됩니다.</p>
             <a href="tel:1661-4262" class="btn-tel">☎ 24시 접수: 1661-4262</a>
         </section>
 
