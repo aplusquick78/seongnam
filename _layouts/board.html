@@ -189,36 +189,44 @@ $('#fullpage').fullpage({
     </div>
 </div>
 
-<div class="promotion_list section fp-section fp-table" id="section7" style="background: #ADD397;">
-    <div class="text_area fp-tableCell" style="vertical-align: middle;">
-        <section style="margin: 0 auto; max-width: 1100px; text-align: center; padding: 20px; position: relative; z-index: 9999;">
-            <h2 class="sub_title" style="font-weight:800; color:#333; margin-bottom:10px;">📍 빠른배송 성남퀵서비스 성남시 전지점 안내</h2>            
-            <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 6px; position: relative; z-index: 10000;">
+<div class="promotion_list section fp-section fp-table" id="section7" style="background: #add397;">
+    <div class="text_area fp-tableCell" style="vertical-align: middle; padding: 40px 10px !important;">
+        <section style="margin: 0 auto; max-width: 1000px; text-align: center; position: relative; z-index: 9999;">
+            <h2 style="font-weight:800; color:#333; margin-bottom:5px; font-size: 1.3rem;">📍 빠른배송 성남퀵서비스 성남시 전지점 안내</h2>
+
+            <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 4px; width: 100%; margin: 0 auto;">
                 {% assign towns = "수정구,중원구,분당구,성남터미널,야탑터미널,분당,야탑,신흥동,태평동,수진동,단대동,산성동,양지동,복정동,창곡동,성남동,중동,금광동,은행동,상대원동,하대원동,도촌동,여수동,분당동,수내동,정자동,율동,서현동,이매동,야탑동,판교동,삼평동,백현동,금곡동,궁내동,동원동,구미동,운중동,대장동,석운동" | split: "," %}
                 
-{% for t in towns %}
-<a href="/{{ t }}퀵서비스/" style="
-    display: inline-block; 
-    /* 모바일에서 3개가 한 줄에 나오도록 width를 30% 정도로 조정 */
-    width: calc(33.33% - 8px); 
-    min-width: 80px; 
-    margin-bottom: 5px;
-    padding: 12px 0; 
-    background: #fff; 
-    border: 1px solid #ddd; 
-    border-radius: 5px; 
-    color: #333; 
-    text-decoration: none; 
-    font-weight: bold; 
-    font-size: 0.8rem; 
-    cursor: pointer;
-    box-sizing: border-box;
-    text-align: center;
-">
-    {{ t }}퀵서비스
-</a>
+                {% for t in towns %}
+                <a href="/{{ t }}퀵서비스/" style="
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    /* 모바일 3열 강제 고정: 간격 제외 약 31.5% */
+                    width: calc(32% - 4px); 
+                    height: 45px;
+                    margin-bottom: 4px;
+                    background: #fff; 
+                    border: 1px solid #ddd; 
+                    border-radius: 4px; 
+                    color: #333; 
+                    text-decoration: none; 
+                    font-weight: bold; 
+                    font-size: 0.75rem; /* 글자 크기를 살짝 줄여서 3열 유지 */
+                    box-sizing: border-box;
+                    white-space: nowrap;
+                ">
+                    {{ t }}퀵
+                </a>
+                {% endfor %}
             </div>
-            <p style="margin-top:25px; font-weight:800; color:#222; font-size: 1.1rem;">☎ 24시 빠른배송 접수: 1661-4262</p>
+            
+            <div style="margin-top: 30px; padding-bottom: 50px;">
+                <p style="font-weight:800; color:#222; font-size: 1.1rem; margin-bottom: 10px;">☎ 24시 빠른배송 접수</p>
+                <a href="tel:1661-4262" style="display: inline-block; padding: 10px 25px; background: #d32f2f; color: #fff; border-radius: 50px; text-decoration: none; font-weight: bold; font-size: 1.2rem;">
+                    1661-4262
+                </a>
+            </div>
         </section>
     </div>
 </div>
@@ -242,6 +250,7 @@ $('#fullpage').fullpage({
 <div style="display:none;">{{ content }}</div>
 </body>
 </html>
+
 
 
 
