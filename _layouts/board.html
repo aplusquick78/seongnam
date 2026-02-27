@@ -157,26 +157,32 @@ $('#fullpage').fullpage({
     }
 }
 
-/* 4. 세션 8 (푸터) 0~5번처럼 중앙 정렬 */
+/* 세션 8 푸터: 박스는 중앙에, 글자는 왼쪽 정렬 */
 #section8 {
     background: #1a1a1a !important;
 }
-#section8 .text_area {
+
+#section8 .fp-tableCell {
     display: flex !important;
-    align-items: center;
-    justify-content: center;
+    align-items: center !important;   /* 세로 중앙 */
+    justify-content: center !important; /* 가로 중앙 */
+    width: 100% !important;
 }
 
-@media screen and (max-width: 768px) {
-    /* 모바일에서 지점안내 버튼 더 작게 */
-    .town-grid a {
-        width: calc(33.33% - 4px) !important; /* 모바일은 3개씩 */
-        height: 28px !important;
-    }
-    /* 리포트 출력 개수 제한 스타일 (필요시) */
-    #section6 .board-row:nth-child(n+8) {
-        display: none; /* 모바일에서 너무 많으면 7개까지만 노출 */
-    }
+#section8 footer {
+    margin: 0 auto !important;
+    text-align: left !important; /* 텍스트는 다시 왼쪽으로! */
+    width: 100%;
+    max-width: 640px; /* 사장님 원래 소스 수치로 복구 */
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+#section8 hr {
+    border: 0;
+    border-top: 1px solid #333;
+    margin: 0 0 15px 0 !important; /* 구분선도 왼쪽 정렬 */
+    width: 100%;
 }</style>
 </head>
 <body>
@@ -325,6 +331,7 @@ $('#fullpage').fullpage({
 <div style="display:none;">{{ content }}</div>
 </body>
 </html>
+
 
 
 
