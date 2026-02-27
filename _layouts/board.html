@@ -97,6 +97,32 @@ $('#fullpage').fullpage({
     });
 });
 </script>
+    <style>/* 세션 밀림 방지 긴급 처방 */
+#fullpage, .section, .fp-tableCell {
+    height: 100% !important;
+}
+
+@media screen and (max-width: 768px) {
+    /* 모바일에서 헤더 때문에 첫 세션이 가려지는 것 방지 */
+    #section0 .text_area {
+        padding-top: 80px !important; 
+    }
+    
+    /* 세션 내부 콘텐츠가 화면 밖으로 삐져나가지 않게 제한 */
+    .section .text_area {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        height: 100vh !important;
+        box-sizing: border-box;
+    }
+
+    /* 리포트 목록(Section 6)과 지점안내(Section 7)만 예외적으로 스크롤 허용 */
+    #section6, #section7 {
+        height: auto !important;
+        min-height: 100vh;
+    }
+}</style>
 </head>
 <body>
     <header class="main_header">
@@ -244,6 +270,7 @@ $('#fullpage').fullpage({
 <div style="display:none;">{{ content }}</div>
 </body>
 </html>
+
 
 
 
