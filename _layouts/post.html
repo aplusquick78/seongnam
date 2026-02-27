@@ -4,60 +4,35 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
     <title>{{ page.title }} | {{ page.town }} 퀵서비스 빠른배송</title>
-    <meta name="description" content="{{ page.town }}퀵서비스 전문. {{ page.town }} 전지역 신속한 배송. 오토바이퀵, 다마스퀵, 라보퀵, 1톤용달, 화물 맞춤 배차. 24시간 접수 및 기업 법인 결제 지원.">
+    <meta name="description" content="{{ page.town }} 퀵서비스 배송 리포트. {{ page.title }}. 성남 전지역 24시 신속한 픽업 및 빠른배송 전문 기사님 상시 대기.">
     <meta name="keywords" content="{{ page.town }} 퀵서비스, {{ page.town }} 퀵, 성남 퀵, 분당 퀵, {{ page.title | replace: ' ', ', ' }}">
     <meta name="robots" content="index, follow">
-    <meta name="author" content="빠른 {{ page.town }}퀵서비스">
+    <meta name="author" content="{{ page.town }}퀵서비스">
     <meta name="theme-color" content="#004a99">
     
     <link rel="canonical" href="https://seongnam.8222quick.com{{ page.url }}">
     <link rel="icon" href="https://seongnam.8222quick.com/favicon.ico">
     
-    <meta property="og:title" content="성남 {{ page.town }}퀵서비스 | {{ page.title }}">
-    <meta property="og:description" content="{{ page.town }} 전지역 24시 실시간 배차, {{ page.town }} 초고속 퀵배송 리포트">
+    <meta property="og:title" content="{{ page.title }} | {{ page.town }} 빠른배송 퀵서비스">
+    <meta property="og:description" content="{{ page.town }} 전지역 24시 실시간 배차 리포트: {{ page.title }}">
     <meta property="og:image" content="https://seongnam.8222quick.com/img/quick.jpg">
     <meta property="og:url" content="https://seongnam.8222quick.com{{ page.url }}">
     <meta property="og:type" content="article">
     
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="성남 {{ page.town }}퀵 | {{ page.title }}">
-    <meta name="twitter:description" content="{{ page.town }} 전지역 신속 배차 빠른배송 성남 {{ page.town }}퀵서비스">
+    <meta name="twitter:title" content="{{ page.title }} | {{ page.town }} 퀵서비스">
+    <meta name="twitter:description" content="{{ page.town }} 신속 배차 빠른배송 리포트">
     <meta name="twitter:image" content="https://seongnam.8222quick.com/img/quick.jpg">
-
-    <script type="application/ld+json">
-    {
-     "@context": "https://schema.org",
-     "@type": "FAQPage",
-     "mainEntity": [{
-      "@type": "Question",
-      "name": "성남 {{ page.town }}내 인접 지역 이동 요금은 얼마인가요?",
-      "acceptedAnswer": {
-       "@type": "Answer",
-       "text": "성남 {{ page.town }}관내 이동은 기본 요금으로 가능하며, 상세 출발지와 도착지에 따라 1661-4262로 문의하시면 즉시 안내해 드립니다."
-      }
-     },{
-      "@type": "Question",
-      "name": "성남 {{ page.town }}인근 픽업이 바로 가능한가요?",
-      "acceptedAnswer": {
-       "@type": "Answer",
-       "text": "네, {{ page.town }} 성남 주요 상권 일대에 상주 기사가 항시 대기 중이므로 접수 즉시 신속한 배송 원칙에 따라 빠른 방문이 가능합니다."
-      }
-     }]
-    }
-    </script>
 
     <script src="/file/jquery.min.js"></script>
     <link rel="stylesheet" type="text/css" href="/file/base.css" />
     <style>
-        body { margin: 0; padding: 0; background: #eef4fb; } /* 사장님 요청 바탕색 */
-        
         .post-container {
-            padding: 100px 20px 60px 20px !important; 
+            padding: 100px 20px 60px 20px !important;
             max-width: 800px;
             margin: 0 auto;
-            background: #ffffff; 
+            background: #fff;
             min-height: 100vh;
-            box-shadow: 0 0 20px rgba(0,0,0,0.05);
         }
         .post-header {
             border-bottom: 2px solid #004a99;
@@ -65,7 +40,7 @@
             margin-bottom: 30px;
         }
         .post-title {
-            font-size: 1.5rem;
+            font-size: 1.6rem;
             font-weight: 800;
             color: #333;
             line-height: 1.4;
@@ -86,7 +61,6 @@
             height: auto;
             border-radius: 8px;
             margin: 20px 0;
-            display: block;
         }
         .call-action {
             margin-top: 50px;
@@ -107,10 +81,6 @@
             font-weight: bold;
             font-size: 1.2rem;
         }
-        @media screen and (max-width: 768px) {
-            .post-title { font-size: 1.2rem; }
-            .post-container { padding-top: 90px !important; }
-        }
     </style>
 </head>
 <body>
@@ -125,10 +95,10 @@
 
     <article class="post-container">
         <header class="post-header">
-            <span style="display:inline-block; padding:3px 10px; background:#eef4fb; color:#004a99; border-radius:4px; font-weight:bold; font-size:0.8rem; margin-bottom:10px;">신속한 배송 완료 리포트</span>
+            <span style="display:inline-block; padding:3px 10px; background:#eef4fb; color:#004a99; border-radius:4px; font-weight:bold; font-size:0.8rem; margin-bottom:10px;">배송완료 리포트</span>
             <h1 class="post-title">{{ page.title }}</h1>
             <div class="post-meta">
-                <span>📍 지역: 성남 {{ page.town }}</span> | 
+                <span>📍 지역: {{ page.town }}</span> | 
                 <span>📅 일시: {{ page.date | date: "%Y-%m-%d" }}</span>
             </div>
         </header>
@@ -138,18 +108,17 @@
         </div>
 
         <section class="call-action">
-            <h2 style="font-size:1.2rem; color:#333;">📢 성남 {{ page.town }} 퀵서비스 이용안내</h2>
-            <p style="margin-top:10px; color:#666;"><strong>{{ page.town }} 전지역</strong> 신속한 픽업과 빠른배송!<br>전화 한 통으로 기사님이 즉시 방문합니다.</p>
+            <h2 style="font-size:1.2rem; color:#333;">📢 {{ page.town }} 퀵서비스 이용안내</h2>
+            <p style="margin-top:10px; color:#666;"><strong>{{ page.town }} 전지역</strong> 신속한 픽업과 빠른배송!<br>전화 한 통으로 즉시 배차됩니다.</p>
             <a href="tel:1661-4262" class="btn-tel">☎ 24시 접수: 1661-4262</a>
         </section>
 
         <div style="margin-top: 40px; text-align: center;">
-            <a href="/" style="color:#888; text-decoration:none; font-size:0.9rem;">[ 메인 페이지로 이동 ]</a>
+            <a href="/" style="color:#888; text-decoration:none; font-size:0.9rem;">[ 메인으로 돌아가기 ]</a>
         </div>
     </article>
 
     <footer style="background:#1a1a1a; padding:30px 20px; color:#888; font-size:0.8rem; text-align:center;">
-        <p>신속한픽업 빠른배송 성남 {{ page.town }}퀵서비스</p>
         <p>© 2026 빠른배송 성남 퀵서비스. All Rights Reserved.</p>
     </footer>
 </body>
