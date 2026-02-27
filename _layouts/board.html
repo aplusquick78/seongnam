@@ -191,26 +191,23 @@ $('#fullpage').fullpage({
 
 <div class="promotion_list section fp-section fp-table" id="section7" style="background: #ADD397;">
     <div class="text_area fp-tableCell" style="vertical-align: middle;">
-        <section style="margin: 0 auto; max-width: 900px; text-align: center; padding: 20px; position: relative; z-index: 9999;">
-            <h2 class="sub_title" style="font-weight:800; color:#333; margin-bottom:10px;">📍 빠른배송 성남퀵서비스 성남시 전지점 안내</h2>        
+        <section style="margin: 0 auto; max-width: 1100px; text-align: center; padding: 20px; position: relative; z-index: 9999;">
+            <h2 class="sub_title" style="font-weight:800; color:#333; margin-bottom:10px;">📍 빠른배송 성남퀵서비스</h2>
+            <p style="font-size: 1.1rem; font-weight: 700; color: #666; margin-bottom: 25px;">성남시 전지점 안내 (40개 지점)</p>
             
             <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 6px; position: relative; z-index: 10000;">
-                {% assign towns = "수정구,중원구,분당구,신흥동,태평동,수진동,단대동,산성동,양지동,복정동,창곡동,성남동,중동,금광동,은행동,상대원동,하대원동,도촌동,분당동,수내동,정자동,율동,서현동,이매동,야탑동,판교동,삼평동,백현동,금곡동,궁내동,동원동,구미동,운중동" | split: "," %}
+                {% assign towns = "수정구,중원구,분당구,성남터미널,야탑터미널,분당,야탑,신흥동,태평동,수진동,단대동,산성동,양지동,복정동,창곡동,성남동,중동,금광동,은행동,상대원동,하대원동,도촌동,여수동,분당동,수내동,정자동,율동,서현동,이매동,야탑동,판교동,삼평동,백현동,금곡동,궁내동,동원동,구미동,운중동,대장동,석운동" | split: "," %}
                 
                 {% for t in towns %}
-                <a href="/{{ t }}퀵서비스/" style="display:inline-block; width:calc(16% - 8px); min-width:90px; padding:10px 0; background:#fff; border:1px solid #ddd; border-radius:5px; color:#333; text-decoration:none; font-weight:bold; font-size:0.85rem; cursor:pointer; transition: 0.2s;">
+                <a href="/{{ t }}퀵서비스/" style="display:inline-block; width:calc(12.5% - 8px); min-width:100px; padding:10px 0; background:#fff; border:1px solid #ddd; border-radius:5px; color:#333; text-decoration:none; font-weight:bold; font-size:0.8rem; cursor:pointer;">
                     {{ t }}퀵서비스
                 </a>
                 {% endfor %}
             </div>
-            
-            <p style="margin-top:25px; font-weight:800; color:#222; font-size: 1.2rem;">
-                ☎ 24시 빠른배송 접수: 1661-4262
-            </p>
+            <p style="margin-top:25px; font-weight:800; color:#222; font-size: 1.1rem;">☎ 24시 빠른배송 접수: 1661-4262</p>
         </section>
     </div>
 </div>
-
         <div class="section fp-section fp-table" id="section8" style="background: #1a1a1a;">
             <div class="text_area fp-tableCell" style="vertical-align: middle;">
                 <footer style="margin: 0 auto; max-width: 640px; text-align: left; color: #bbb; font-size: 0.85rem; line-height: 1.6; padding: 20px;">
@@ -231,6 +228,7 @@ $('#fullpage').fullpage({
 <div style="display:none;">{{ content }}</div>
 </body>
 </html>
+
 
 
 
