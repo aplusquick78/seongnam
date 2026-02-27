@@ -97,41 +97,57 @@ $('#fullpage').fullpage({
     });
 });
 </script>
-    <style>/* 6, 7, 8번 세션 꼬임 방지 전용 스타일 */
-
-/* 모든 세션의 기본 테이블 구조 해제 (모바일 위주) */
-.fp-section.fp-table, .fp-tableCell {
-    display: block !important;
-    height: auto !important;
-}
-
-/* 0~5번은 화면에 꽉 차게 유지 */
-#section0, #section1, #section2, #section3, #section4, #section5 {
+    <style>/* 1. 모든 세션을 0~5번처럼 한 화면에 고정 */
+.section, .fp-section, .fp-tableCell {
     height: 100vh !important;
-    display: table !important; /* 0~5번은 기존 중앙 정렬 유지 */
-}
-#section0 .fp-tableCell, #section1 .fp-tableCell, #section2 .fp-tableCell, 
-#section3 .fp-tableCell, #section4 .fp-tableCell, #section5 .fp-tableCell {
-    display: table-cell !important;
-    vertical-align: middle;
+    overflow: hidden !important; /* 화면 밖으로 안 나가게 */
 }
 
-/* ⚠️ 문제의 6, 7, 8번: 내용만큼 늘어나게 강제 설정 */
-#section6, #section7, #section8 {
-    height: auto !important; 
-    min-height: 100vh; 
-    padding: 80px 0 40px 0 !important; /* 상하 여백 확보 */
-    display: block !important;
+/* 2. 세션 6 (리포트 목록) 축소 */
+#section6 .text_area {
+    padding-top: 60px !important;
+}
+#section6 .board-row {
+    padding: 6px 15px !important; /* 간격 축소 */
+}
+#section6 .board-row span {
+    font-size: 0.8rem !important; /* 글씨 축소 */
 }
 
-/* 모바일 전용 미세 조정 */
+/* 3. 세션 7 (지점 안내) 축소 - 사장님 핵심 요청 */
+#section7 .text_area {
+    padding-top: 60px !important;
+}
+#section7 .sub_title {
+    font-size: 1.1rem !important;
+    margin-bottom: 10px !important;
+}
+.town-grid a {
+    width: calc(25% - 4px) !important; /* 한 줄에 4개씩 촘촘하게 */
+    height: 32px !important; /* 높이 대폭 축소 */
+    font-size: 0.65rem !important; /* 글씨 대폭 축소 */
+    margin-bottom: 3px !important;
+}
+
+/* 4. 세션 8 (푸터) 0~5번처럼 중앙 정렬 */
+#section8 {
+    background: #1a1a1a !important;
+}
+#section8 .text_area {
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+}
+
 @media screen and (max-width: 768px) {
-    #section6 .text_area, #section7 .text_area {
-        padding-top: 20px !important;
+    /* 모바일에서 지점안내 버튼 더 작게 */
+    .town-grid a {
+        width: calc(33.33% - 4px) !important; /* 모바일은 3개씩 */
+        height: 28px !important;
     }
-    /* 지점 안내 버튼들 모바일에서 안 겹치게 */
-    .promotion_list a {
-        margin-bottom: 5px !important;
+    /* 리포트 출력 개수 제한 스타일 (필요시) */
+    #section6 .board-row:nth-child(n+8) {
+        display: none; /* 모바일에서 너무 많으면 7개까지만 노출 */
     }
 }</style>
 </head>
@@ -281,6 +297,7 @@ $('#fullpage').fullpage({
 <div style="display:none;">{{ content }}</div>
 </body>
 </html>
+
 
 
 
