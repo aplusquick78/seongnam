@@ -3,9 +3,9 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
-    <title>{{ page.title }} | {{ page.town }} 퀵서비스 빠른배송</title>
-    <meta name="description" content="{{ page.town }} 퀵서비스 배송 리포트. {{ page.title }}. 성남 전지역 24시 신속한 픽업 및 빠른배송 전문 기사님 상시 대기.">
-    <meta name="keywords" content="{{ page.town }} 퀵서비스, {{ page.town }} 퀵, 성남 퀵, 분당 퀵, {{ page.title | replace: ' ', ', ' }}">
+    <title>{{ page.title }} | {{ page.town }}퀵서비스 빠른배송</title>
+    <meta name="description" content="{{ page.town }} 퀵서비스 배송 리포트. {{ page.title }}. 성남 전지역 24시 신속한 배송 전문 기사님 상시 대기.">
+    <meta name="keywords" content="{{ page.town }} 퀵서비스, {{ page.town }} 퀵, 성남 퀵, {{ page.town }} 퀵서비스 리포트">
     <meta name="robots" content="index, follow">
     <meta name="author" content="{{ page.town }}퀵서비스">
     <meta name="theme-color" content="#B9CEEB">
@@ -23,7 +23,6 @@
     <link rel="stylesheet" type="text/css" href="/file/base.css" />
     <style>
         body { margin: 0; padding: 0; background-color: #B9CEEB !important; }
-
         .post-container {
             padding: 100px 20px 60px 20px !important;
             max-width: 800px;
@@ -31,33 +30,28 @@
             background: #B9CEEB;
             min-height: 100vh;
         }
-
         .post-header {
             border-bottom: 2px solid #004a99;
             padding-bottom: 15px;
             margin-bottom: 30px;
         }
-
         .post-title {
             font-size: 1.6rem;
             font-weight: 800;
             color: #1a1a1a;
             line-height: 1.4;
         }
-
         .post-meta {
             font-size: 0.9rem;
             color: #555;
             margin-top: 10px;
         }
-
         .post-content {
             font-size: 1.05rem;
             line-height: 1.8;
             color: #222;
             word-break: break-all;
         }
-
         .post-content img {
             max-width: 100%;
             height: auto;
@@ -65,7 +59,6 @@
             margin: 20px 0;
             box-shadow: 0 4px 10px rgba(0,0,0,0.1);
         }
-
         .call-action {
             margin-top: 50px;
             padding: 25px;
@@ -74,8 +67,6 @@
             text-align: center;
             border: 1px dashed #004a99;
         }
-
-        /* 공통 버튼 스타일 */
         .btn-action {
             display: inline-block;
             text-decoration: none;
@@ -84,7 +75,6 @@
             box-shadow: 0 4px 10px rgba(0,0,0,0.15);
             transition: all 0.3s ease;
         }
-
         .btn-tel {
             margin-top: 15px;
             padding: 12px 30px;
@@ -92,16 +82,13 @@
             color: #fff;
             font-size: 1.2rem;
         }
-
-        /* 메인으로 돌아가기 버튼 스타일 */
         .btn-home {
             margin-top: 40px;
             padding: 10px 40px;
-            background: #004a99; /* 성남퀵 메인 블루 */
+            background: #004a99;
             color: #fff !important;
             font-size: 1rem;
         }
-
         .btn-action:active { transform: scale(0.95); }
     </style>
 </head>
@@ -117,21 +104,30 @@
 
     <article class="post-container">
         <header class="post-header">
-            <span style="display:inline-block; padding:3px 10px; background:#004a99; color:#fff; border-radius:4px; font-weight:bold; font-size:0.8rem; margin-bottom:10px;">신속한 배송 리포트</span>
-            <h1 class="post-title">{{ page.title }}</h1>
+            <span style="display:inline-block; padding:3px 10px; background:#004a99; color:#fff; border-radius:4px; font-weight:bold; font-size:0.8rem; margin-bottom:10px;">빠른배송 퀵서비스 리포트</span>
+            <h1 class="post-title">{{ page.title | replace: "성남퀵서비스", page.town | append: "퀵서비스" }}</h1>
             <div class="post-meta">
-                <span>📍 지역: {{ page.town }}</span> | 
+                <span>📍 지역: 성남 {{ page.town }}</span> | 
                 <span>📅 일시: {{ page.date | date: "%Y-%m-%d" }}</span>
             </div>
         </header>
 
         <div class="post-content">
-            {{ content }}
+            <p>🚀 성남 {{ page.town }} 현장 실시간 배송 소식</p>
+            <p>{{ page.town }}퀵서비스는 성남시 분당구 {{ page.town }} 인근에서 가장 가까운 기사님을 매칭하는 <strong>스마트 AI 배차 시스템</strong>을 운영 중입니다. 고객님의 소중한 화물을 <strong>신속한 배송</strong> 원칙에 따라 안전하게 전달해 드렸습니다.</p>
+            
+            <p>✅ {{ page.town }}다마스퀵 현장 리포트</p>
+            {{ content }} <p>☎️ 성남 {{ page.town }} 전지역 24시 접수</p>
+            <p>성남시 수정구, 중원구, 분당구 어디든 <strong>20~30분 내 방문 픽업</strong>이 가능합니다.</p>
+            <p><strong>대표번호: 1661-4262</strong><br>
+            지원차종: 오토바이, 다마스, 라보, 1톤용달<br>
+            특화지역: 판교테크노밸리, 야탑동, 상대원 공단 전문</p>
+            <p>빠른배송 {{ page.town }}퀵서비스 였습니다.</p>
         </div>
 
         <section class="call-action">
-            <h2 style="font-size:1.2rem; color:#004a99;">📢 {{ page.town }} 퀵서비스 이용안내</h2>
-            <p style="margin-top:10px; color:#333;"><strong>{{ page.town }} 전지역</strong> 신속한 배송!<br>언제 어디서나 즉시 달려갑니다.</p>
+            <h2 style="font-size:1.2rem; color:#004a99;">📢 성남 {{ page.town }} 퀵서비스 이용안내</h2>
+            <p style="margin-top:10px; color:#333;">성남 {{ page.town }} 전지역 <strong>빠른배송!</strong><br>전화 한통만 주시면 총알 처럼 날아 갑니다.</p>
             <a href="tel:1661-4262" class="btn-action btn-tel">☎ 24시 접수: 1661-4262</a>
         </section>
 
