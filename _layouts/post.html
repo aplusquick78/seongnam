@@ -105,24 +105,24 @@
     <article class="post-container">
         <header class="post-header">
             <span style="display:inline-block; padding:3px 10px; background:#004a99; color:#fff; border-radius:4px; font-weight:bold; font-size:0.8rem; margin-bottom:10px;">빠른배송 퀵서비스 리포트</span>
-            <h1 class="post-title">{{ page.title | replace: "성남퀵서비스", page.town | append: "퀵서비스" }}</h1>
+            <h1 class="post-title">{{ page.title | replace: "퀵서비스", page.town | append: "퀵서비스" }}</h1>
             <div class="post-meta">
-                <span>📍 지역: 성남 {{ page.town }}</span> | 
+                <span>📍 지역: {{ page.town }}</span> | 
                 <span>📅 일시: {{ page.date | date: "%Y-%m-%d" }}</span>
             </div>
         </header>
 
         <div class="post-content">
-            <p>🚀 성남 {{ page.town }} 현장 실시간 배송 소식</p>
-            <p>{{ page.town }}퀵서비스는 성남시 분당구 {{ page.town }} 인근에서 가장 가까운 기사님을 매칭하는 <strong>스마트 AI 배차 시스템</strong>을 운영 중입니다. 고객님의 소중한 화물을 <strong>신속한 배송</strong> 원칙에 따라 안전하게 전달해 드렸습니다.</p>
+            <p>🚀 {{ page.town }} 현장 실시간 배송 소식</p>
+            <p>{{ page.town }}퀵서비스는 성남시 분당구 {{ page.town }} 인근에서 가장 가까운 기사님을 매칭하는 <strong>스마트 AI 배차 시스템</strong>을 운영 중입니다. 고객님의 소중한 화물을 <strong>빠른배송</strong> 원칙에 따라 안전하게 전달해 드렸습니다.</p>
             
             <p>✅ {{ page.town }}다마스퀵 현장 리포트</p>
-            {{ content }} <p>☎️ 성남 {{ page.town }} 전지역 24시 접수</p>
+            <p>☎️ 성남 {{ page.town }} 전지역 24시 접수</p>
             <p>성남시 수정구, 중원구, 분당구 어디든 <strong>20~30분 내 방문 픽업</strong>이 가능합니다.</p>
-            <p><strong>대표번호: 1661-4262</strong><br>
+            <p><strong>대표번호: 1661-4262<br>
             지원차종: 오토바이, 다마스, 라보, 1톤용달<br>
             특화지역: 판교테크노밸리, 야탑동, 상대원 공단 전문</p>
-            <p>빠른배송 {{ page.town }}퀵서비스 였습니다.</p>
+            <p>빠른배송 {{ page.town }}퀵서비스</strong> 였습니다.</p>
         </div>
 
         <section class="call-action">
