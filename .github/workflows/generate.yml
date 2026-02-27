@@ -1,0 +1,85 @@
+name: Fast-Delivery Town Pages Generator
+
+on:
+  schedule:
+    # 매시간 정각에 실행하여 데이터 동기화
+    - cron: '0 * * * *'
+  push:
+    paths:
+      - '_data/towns.yml'
+  workflow_dispatch: # 수동 실행 버튼
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.x'
+
+      - name: Install PyYAML
+        run: pip install pyyaml
+
+      - name: Run Generator Script (신속한 픽업 빠른배송)
+        run: |
+          python - <<EOF
+          import yaml
+          import os
+
+          # 1. towns.yml 읽기
+          with open('_data/towns.yml', 'r', encoding='utf-8') as f:
+              data = yaml.safe_load(f)
+
+          # 2. 페이지 생성 로직
+          for region_group in data:
+              region = region_group['region']
+              reg_name = region.replace("광역시", "").replace("특별시", "").replace("경기도", "경기").strip()
+              
+              # 시/도 폴더 생성
+              reg_folder = f"{reg_name}퀵서비스"
+              os.makedirs(reg_folder, exist_ok=True)
+              with open(f"{reg_folder}/index.html", 'w', encoding='utf-8') as f:
+                  f.write(f"---\nlayout: board\ntown: {reg_name}\ntown_full: {region}\ntitle: {reg_name}퀵서비스 | 신속한 픽업 빠른배송 8222퀵\n---\n")
+
+              for district in region_group['districts']:
+                  dist_name = district['name'].strip()
+                  d_short = dist_name.replace("시", "") if dist_name.endswith("시") else dist_name
+                  
+                  # 구/군 폴더 생성
+                  dist_folder = f"{d_short}퀵서비스"
+                  if os.path.exists(dist_folder) and dist_folder != reg_folder:
+                      dist_folder = f"{reg_name}{d_short}퀵서비스"
+                  
+                  os.makedirs(dist_folder, exist_ok=True)
+                  with open(f"{dist_folder}/index.html", 'w', encoding='utf-8') as f:
+                      f.write(f"---\nlayout: board\ntown: {d_short}\ntown_full: {region} {dist_name}\ntitle: {dist_name} 퀵서비스 | 신속한 픽업 빠른배송 8222퀵\n---\n")
+
+                  for town in district['towns']:
+                      # 동네별 폴더 생성
+                      town_name = town.strip()
+                      folder_name = f"{town_name}퀵서비스"
+                      
+                      # 중복 이름 방지 (예: 신사동)
+                      if os.path.exists(folder_name):
+                          folder_name = f"{d_short}{town_name}퀵서비스"
+                      
+                      os.makedirs(folder_name, exist_ok=True)
+                      
+                      # 레이아웃 board 유지 및 타이틀 수정
+                      content = f"---\nlayout: board\ntown: {town_name}\ntown_full: {region} {dist_name} {town_name}\ntitle: {town_name} 퀵서비스 | 신속한 픽업 빠른배송 8222퀵\n---\n"
+                      
+                      with open(f"{folder_name}/index.html", 'w', encoding='utf-8') as f:
+                          f.write(content)
+          EOF
+
+      - name: Commit and Push changes
+        run: |
+          git config --global user.name "Quick-Pickup-Bot"
+          git config --global user.email "bot@8222quick.com"
+          git add .
+          git commit -m "신속한 픽업 빠른배송 지역 페이지 생성 완료" || exit 0
+          git push origin main
